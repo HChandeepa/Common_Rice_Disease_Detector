@@ -7,7 +7,7 @@ from PIL import Image
 import tensorflow as tf
 app=FastAPI()
 
-MODEL=tf.keras.models.load_model("../saved models/1")
+MODEL=tf.keras.models.load_model("../models/1")
 CLASS_NAMES = ["BrownSpot", "Healthy", "Hispa","LeafBlast"]
 
 @app.get("/ping")
