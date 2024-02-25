@@ -28,7 +28,7 @@ CLASS_NAMES = ["BrownSpot", "Healthy", "Hispa", "LeafBlast"]
 @app.get("/ping")
 async def ping():
     return "Hello, I am alive"
-
+2002
 
 def read_file_as_image(data) -> np.ndarray:
     image = np.array(Image.open(BytesIO(data)))
