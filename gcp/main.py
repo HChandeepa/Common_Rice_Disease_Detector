@@ -18,7 +18,8 @@ def download_blob(bucket_name, source_blob_name, destination_file_name):
 
 def predict(request):
     global model
-    if model is not None:
+    if model is None:
+        print("I will download the model now")
         download_blob(
             BUCKET_NAME,
             "models/RiceLeafs.h5",
@@ -26,6 +27,7 @@ def predict(request):
 
         )
         model = tf.keras.models.load_model("/tmp/RiceLeafs.h5")
+        print("Model downloaded",model)
 
     image = request.files["file"]
 
